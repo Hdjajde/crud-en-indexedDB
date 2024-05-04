@@ -1,0 +1,23 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="CRUD en indexDB con Astro" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body class="content-center min-h-screen">
+    <main class="max-w-[80ch] m-auto p-[0.1px]">
+      <slot />
+    </main>
+  </body>
+</html>
