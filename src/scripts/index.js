@@ -104,8 +104,14 @@ function renderTasks() {
 renderTasks();
 
 form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  if (taskInput.value.trim() === "") {
+    taskInput.value = "";
+    return
+  }
+
   const task = {
-    task: taskInput.value
+    task: taskInput.value.trim()
   }
 
   const request = indexedDB.open("TODO");
@@ -123,8 +129,6 @@ form.addEventListener("submit", (e) => {
     }
 
   };
-
-  e.preventDefault();
 })
 
 reset.addEventListener("click", () => {
